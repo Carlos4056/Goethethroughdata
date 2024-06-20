@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Las Penas del Joven Werther</title>
+    <link rel="stylesheet" href="/css/test.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.2.0/Tween.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+    <header>
+      <img src="/IMAGE/Foto_principal.jpg" alt="Grabado de una escena de las Penas del joven Werther" class="imagen-principal">
+      <p class="pie_grafico">Grabado de una escena del libro. Fuente: GETTY IMEGES
+      </p>
+      <h1>Goethe through data</h1>
+      <p id="subtitulo">Análisis interactivo de tres traducciones de "Las Penas del Joven Werther" al español</p>
+    </header>
+  
+    <main>
+      <section id="introduccion">
+        <p>
+          Hay tantas formas de leer como lectores. Aquí aporto otra forma mucho más visual para releer este clásico desde otra perspectiva.
+          Este trabajo es casi la antítesis del Romanticismo alemán, ya que se intenta hacer <mark class="mark">un análisis a nivel cuantitativo y comparativo de la novela</mark>. Para ello se han escogido tres traducciones al español
+          para compararlas entre ellas (sobre todo, porque no sé alemán). ¿El objetivo? Crear un artículo interactivo para <mark class="mark">explorar de forma 
+          gráfica patrones dentro de la obra</mark> y las divergencias entre traducciones posteriores.
+        </p>
+        <p> 
+           Con tan solo 24 años, el escritor alemán escribió <mark class="mark">una pequeña novela epistolar</mark> que casi de forma inmediata lo catapultó a la fama. 
+           Entre enero y marzo de 1774, Goethe plasmo sobre papel en menos de seis semanas "Las penas del joven Werther". La novela consiste en una
+           correspondencia de cartas basada, en gran parte, <mark class="mark">en las propias experiencias de Goethe</mark> y en el <mark class="mark">suicidio de su amigo Karl Wilhelm 
+           Jerusalem</mark>. Al igual que Werther, Goethe se enamoró de una mujer llamada Charlotte Buff, quien estaba comprometida con otro hombre.
+        </p>
+        <p>
+            El libro tuvo tanto éxito que dio nombre a su propio fenómeno cultural, conocido como <mark class="mark">“Werther Fever”</mark>, donde los jóvenes imitaban la vestimenta y 
+            el comportamiento del protagonista. El influencer de la época. En poco tiempo, la novela fue traducida a varios idiomas y se difundió por toda Europa. La primera traducción 
+            al francés apareció en 1776, seguida de traducciones al inglés y a otros idiomas del continente. Se hizo tan famosa que se dice que Napoleón Bonaparte la llevó consigo durante sus campañas 
+            militares. De hecho, fue una de las pocas cosas que Napoleón llevó consigo al exilio en la isla de Santa Elena.
+        </p>
+        <p> 
+            Es importante tener en cuenta que en el siglo XVIII, la publicación y distribución de libros era un proceso mucho más 
+            lento en comparación con los estándares actuales. Así que se podría decir que la novela saltó a la fama casi de manera instantánea.
+            El libro causó preocupación en su momento debido a su representación del suicidio. 
+            Algunos lectores temían que la novela pudiera alentar a los jóvenes a quitarse la vida. De hecho, se dieron varios casos de "suicidios por imitación" después de la publicación del libro.
+        </p>
+        <h2>Calendario de cartas de "Las penas del joven Werther"</h2>
+        <div class="chart-calendar">
+          <select id="column-select">
+            <option value="Numero_Frases">Número de frases</option>
+            <option value="Media_Largo_Frases">Media de longitud de las frases</option>
+            <option value="Max_Palabras">Max. de palabras</option>
+            <option value="Min_Palabras">Min. de palabras</option>
+            <option value="Media_Interrogativas">Media de frases interrogativas</option>
+            <option value="Media_Exclamativas">Media de frases exclamativas</option>
+            <option value="Frecuencia_Corazon">Frecuencia de la palabra "corazón"</option>
+            <option value="Frecuencia_Suicidio">Frecuencia de la palabra "suicidio" y derivados</option>
+          </select>
+          <svg id="calendar"></svg>
+          <p class="pie_grafico">Elaboración propia. Métricas calculadas a partir de la <mark class="mark">trad. de Emilio González García</mark> 
+            de "Los padecimientos del joven Werther", Editorial Akal (2008).
+          </p>
+        </div>
+        <div>
+          <p>En este gráfico están representadas todas las cartas de la novela por fecha. Esto nos da pistas sobre en qué mes, semana y día de la semana el protagonista escribía más (menos en la última parte que aparece otro narrador que explica la 
+            historia por Werther).
+            Por ejemplo, vemos que desde principios de mayo hasta finales de agosto escribe con mucha intensidad. <mark class="mark">En estos cuatro meses conoce a Lotte y se enamora de 
+            ella.</mark> Las cartas no son extremadamente largas, pero sí sus frases, con una media de más de 40 palabras por frase. También encontramos las frases más largas en términos absolutos, con 218 palabras el 
+            18 de agosto de 1771. En este caso, <mark class="mark">utiliza descripciones de la naturaleza para reflejar cómo se siente</mark>. Por eso, esta frase es tan larga. 
+          </p>
+          <p>
+            El 10 de septiembre decide marcharse a la ciudad porque el amor por Lotte no es correspondido y está sumamente deprimido. Cabe recordar que Lotte está comprometida con Albert.
+            Casi no escribe entre septiembre de 1771 hasta principios de enero del año siguiente. En la ciudad encuentra un trabajo como secretario de un embajador. Una ocupación que detesta, pero al menos le mantiene 
+            la cabeza ocupada. Es justo en este momento donde empieza la segunda parte del libro. Solamente escribe una carta al mes. 
+          </p>
+          <p>
+            En enero, decide volver a Wahlheim. Werther se reencuentra con Lotte y su esposo Albert. A pesar de la buena acogida de ambos, Werther no puede controlar sus sentimientos y la cercanía 
+            con Lotte intensifica su desesperación. En febrero, Lotte y Albert se casan. En marzo presenta su dimisión como secretario. Las visitas a casa de Lotte son menos frecuentes, ya que siente que es una carga para ellos.
+            El clímax emocional se produce cuando Werther visita a Lotte el día de Navidad. Durante esta visita, Lotte, consciente de los sentimientos de Werther, se siente incómoda y trata de mantener cierta distancia. 
+            Werther, en un momento de desesperación, la besa apasionadamente. Lotte lo rechaza y le pide que se vaya, lo que incrementa la angustia de Werther. 
+          </p><br>
+          <p id="cita" class="cita">"Tengo tanto… Y mis sentimientos por ella lo devoran todo. Tengo tanto, y sin ella todo me parece nada"<br><i>27 de octubre de 1772</i></p>
+          <p><br>
+            <mark class="mark">Tras el rechazo de Lotte, Werther toma la decisión de suicidarse.</mark> El 21 de diciembre, escribe una carta de despedida a Lotte. Pide prestadas pistolas a Albert con el pretexto de un viaje, 
+            y Albert, ajeno a las intenciones de Werther, accede a prestárselas. Werther escribe su última carta, en la cual se despide. Durante la madrugada, se dispara en la cabeza con una de las pistolas prestadas. 
+            Werther no muere inmediatamente, sino que agoniza durante varias horas y finalmente fallece.
+          </p>
+        </div>
+        <br>
+        <div style="min-height:383px"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/0fxfD/embed.js?v=5" charset="utf-8"></script><noscript><img src="https://datawrapper.dwcdn.net/0fxfD/full.png" alt="" /></noscript>
+        </div>
+        </section>
+  
+      <section id="grafico-d3">
+        <h2>Frecuencia de palabras</h2>
+        <p>Entre lo similar está la diferencia. Para comparar las distintas traducciones a nivel cuantitativo se ha calculado la frecuencia de palabras de cada una. Se ha utilizado la traducción de <mark class="mark">de Emilio González García (2008)</mark>,
+          <mark class="amarillo">la de Isabel Hernández (2011)</mark> y <mark class="lila">la de José María Valverde (2016)</mark>.
+       </p>
+        <div class="chart-container">
+          <div class="chart-wrapper">
+            <svg id="chart_dan"></svg>
+          </div>
+          <p class="pie_grafico">Elaboración propia. Frecuencia de palabras a partir de la trad. de Emilio González García,
+            de "Los padecimientos del joven Werther", Editorial Akal (2008).
+          </p>
+          <div class="chart-wrapper">
+            <p>Vemos que se trata de una novela altamente reflexiva, dónde predominan los verbos estáticos, de pensamiento y sentimiento. En todas las traducciones encontramos verbos
+              como querer, sentir, tener, pensar... La palabra más repetida es el "yo" y sus derivados. Nada extraño tratándose de una novela romántica donde predomina la individualidad del 
+              sujeto. El uso de palabras genéricas como "todo" o "uno" también nos pueden servir como indicadores de la importancia del individuo ante el resto.
+            </p>
+            <svg id="chart_isabel"></svg>
+          </div>
+          <p class="pie_grafico">Elaboración propia. Frecuencia de palabras a partir de la trad. de Isabel Hernández 
+            de Los padecimientos del joven Werther, Alba Editorial (2011).
+          </p>
+          <div class="chart-wrapper">
+            <p>Sin embargo, aunque encontramos las mismas palabras en las tres traducciones, cambia la cantidad. Aquí es donde entra la marca y estilo personal del traductor. Por ejemplo, 
+              <mark class="amarillo">en la interpretación que hace Hernández aparece 1125 la palabra "yo" o derivados</mark>. Sin embargo, en las otras aparece entre 25 y 30 veces menos.
+              Aparecen también los nombres propios de los protagonistas, empezando por Lotte, seguido por Werther y Albert. La palabra corazón también se cita
+              muchísimo,<mark class="lila"> hasta 111 veces en la traducción de Valverde</mark>. 
+            </p>
+            <svg id="chart_valverde"></svg>
+          </div>
+          <p class="pie_grafico">Elaboración propia. Métricas calculadas a partir de la trad. de José María Valverde
+            de "Los sufrimientos del joven Werther", Editorial Penguin Clásicos (2016).
+          </p>
+        </div>
+      </section>
+  
+      <section id="nube-palabras">
+        <h2>Distancia de Levenshtein en las traducciones</h2>
+        <p>La distancia de Levenshtein, también conocida como "distancia de edición", es una medida que determina la diferencia entre dos 
+          secuencias de caracteres (como palabras o frases). Fue ideada por el científico ruso Vladimir Levenshtein en 1965. Esta métrica <b>mide el número 
+          mínimo de operaciones necesarias para transformar una secuencia de caracteres en otra</b>, desde eliminar hasta insertar o sustituir un carácter.
+          Por ejemplo, las palabras gato y gatito: 
+        </p>
+        <p>
+          gato → gatito (insertar "i")<br>
+          gatito → gatito (insertar "t")
+        </p>
+        <p>
+          La distancia de Levenshtein en este caso es: 2. Cuanto más pequeña la métrica, más similar son los textos.
+           En nuestro caso, la hemos utilizado para comparar las diferentes traducciones: 
+        </p>
+      </section>
+        <div id="wordcloud-container"></div>
+        <div style="min-height:2021px"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/MkLoi/embed.js?v=10" charset="utf-8"></script><noscript><img src="https://datawrapper.dwcdn.net/MkLoi/full.png" alt="" /></noscript></div>
+        <p>Solamente se ha adjuntado en la tabla los primeros registros para no tener problemas con los derechos de autor. Esta aproximación es
+          muy útil para hacer un estudio previo y poder encontrar similitudes de forma más rápida entre las distintas traducciones.
+        </p>
+      </section>
+  
+      <section id="conclusiones">
+        <h2>Conclusiones</h2>
+        <p>"No basta saber, se debe también aplicar. No es suficiente querer, se debe también hacer."
+          Esta cita de Goethe me ha acompañado durante todo este proyecto. Por eso creo que es interesante aplicar una nueva mirada sobre lo que 
+          ya sabemos, sobre lo que leemos y releemos. Que entre lo similar está la diferencia, aunque por poca que sea. Que todo <i>tradutore</i> lleva consigo un <i>traditore</i>, 
+          algo que es irremediable. Por último, que una aproximación más cuantitativa, puede mejorar nuestra percepción de lo cualitativo. 
+          La visualización de Werther ayuda a tener más claros los tempos en los que escribe, su estado anímico y que sus ausencias en la correspondencia
+          tienen una relación directa con los sucesos de la trama.
+        </p>
+      </section>
+  
+      <section id="metodologia">
+        <h2>Metodología</h2>
+        <h3>Herramientas y librerías utilizadas:</h3> 
+        <ul> 
+          <li>R Studio</li> 
+          <li>Librerías de R: 
+            <ul> 
+              <li>tm: Para el procesamiento de texto y la minería de texto.</li> 
+              <li>tidytext: Para el análisis de texto y la manipulación de datos.</li>
+              <li>dplyr: Para la manipulación y transformación de datos.</li> 
+              <li>readr: Para la lectura de archivos CSV.</li> 
+              <li>pdftools: Para la extracción de texto de archivos PDF.</li> 
+              <li>stringr: Para la manipulación de cadenas de texto.</li> 
+              <li>here: Para la gestión de rutas de archivos.</li> 
+              <li>stringdist: Para el cálculo de la distancia de Levenshtein.</li> 
+              <li>udpipe: Para la lematización de texto en español.</li> 
+            </ul> 
+          </li> 
+          <li>D3.js: Biblioteca de JavaScript para la creación de gráficos interactivos.</li> 
+          <li>HTML</li> 
+          <li>CSS</li> 
+        </ul> 
+        <h3>Pasos detallados:</h3> 
+        <ol> 
+          <li>Obtención de los textos base: 
+            <ul> 
+              <li>Para este proyecto, se han utilizado tres traducciones diferentes de la novela "Las penas del joven Werther" de 
+                Johann Wolfgang von Goethe como textos base para el análisis comparativo.</li> 
+              <li>Las traducciones utilizadas son: 
+                <ul> 
+                  <li><mark class="mark">Traducción de Emilio González García, publicada por Editorial Akal (2008)</mark></li> 
+                  <li><mark class="amarillo">Traducción de Isabel Hernández, publicada por Alba Editorial (2011)</mark></li> 
+                  <li><mark class="lila">Traducción de José María Valverde, publicada por Editorial Penguin Clásicos (2016).</mark></li> 
+                </ul> 
+              </li> 
+              </ul> 
+            </li> 
+            <li>Extracción de texto de archivos PDF.
+            </li> 
+            <li>Limpieza y preprocesamiento de texto.
+            <li>División del texto en partes y cartas.  
+            <li>Análisis de similitud utilizando la distancia de Levenshtein: <ul> <li>Se agrupa el dataframe resultante por parte, número de carta y número de frase.</li> <li>Se calcula la distancia de Levenshtein entre las traducciones para cada frase utilizando la función <code>stringdist()</code>.</li> <li>Se crea un nuevo dataframe llamado <code>similarity_data</code> con las distancias de Levenshtein calculadas.</li> <li>Nota: Se encontraron algunas inconsistencias en la cantidad de frases entre las traducciones para algunas partes y cartas. Esto puede afectar los resultados de la distancia de Levenshtein y requiere un análisis más detallado en el futuro.</li> </ul> </li> 
+            <li>Lematización y frecuencia de palabras: <ul> 
+              <li>Se realiza una limpieza adicional de los textos originales eliminando la puntuación y las palabras vacías.</li> 
+              <li>Se aplica la lematización a cada texto utilizando el modelo de español de udpipe.</li> 
+              <li>Se calcula la frecuencia de palabras para cada texto lematizado y se crea un dataframe con las frecuencias de palabras por documento.</li> </ul> </li> 
+              <li>Creación de un calendario con las fechas de las cartas. 
+              <li>Creación de gráficos interactivos con D3.js</li> 
+              <li>Análisis de problemas y consideraciones futuras: <ul> <li>Se encontraron algunas inconsistencias en la cantidad de frases entre las traducciones para algunas partes y cartas al calcular la distancia de Levenshtein.</li> <li>Estas inconsistencias pueden afectar los resultados de la distancia de Levenshtein y requieren un análisis más detallado en el futuro.</li>
+      </section>
+      <section id="advertencia"> 
+        <p class="advertencia">Advertencia sobre derechos de autor: Es importante destacar que los textos utilizados en este proyecto se han obtenido 
+          únicamente con fines académicos y de investigación. Se respetan los derechos de autor de las traducciones y no se pretende 
+          infringir ninguna ley de propiedad intelectual. Los textos se utilizan exclusivamente para el análisis comparativo y no se 
+          distribuyen ni se reproducen con fines comerciales.
+        </p>
+      </section>
+    </main>
+  
+    <footer>
+      <p>Autoría: Este proyecto ha sido realizado por Carlos Albaladejo en el marco de la asignatura de Literatura i Tradicció Europea II del 
+        Grado de Humanidades de la Universitat Pompeu Fabra. 
+      </p>
+    </footer>
+  
+    <script src="/js/script.js"></script>
+    <script src="/js/scriptd3.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"></script>
+  </body>
+  </html>
