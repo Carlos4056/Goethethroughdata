@@ -1,3 +1,5 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"></script>
+
 document.addEventListener('DOMContentLoaded', function() {
   var controller = new ScrollMagic.Controller();
 
