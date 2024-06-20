@@ -22,13 +22,14 @@ body {
   /* Media query para pantallas pequeñas */
   @media screen and (max-width: 767px) {
     body {
-      margin: 0; /* Margen para pantallas pequeñas */
+      margin: 0.1rem; /* Margen para pantallas pequeñas */
     }
 }
   
   header {
     text-align: center;
     padding: 20px;
+    margin-bottom: 1vh;
   }
   
   h1 {
