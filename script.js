@@ -59,3 +59,4 @@ document.addEventListener('DOMContentLoaded', function() {
       .setClassToggle(subrayadoamarillo, 'active')
       .addTo(controller);
   });
+});
