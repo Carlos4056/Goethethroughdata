@@ -59,20 +59,3 @@ document.addEventListener('DOMContentLoaded', function() {
       .setClassToggle(subrayadoamarillo, 'active')
       .addTo(controller);
   });
-  /*// Cambiar el desplazamiento a horizontal cuando el SVG entre en la vista
-  const svgElement = document.querySelector('.chart-calendar');
-  new ScrollMagic.Scene({
-    triggerElement: svgElement,
-    triggerHook: 0.7, // Ajusta según sea necesario
-    duration: svgElement.scrollWidth // Duración basada en el ancho del contenido scrollable
-  })
-    .on('enter', function () {
-      document.body.style.overflowX = 'scroll';
-      document.body.style.overflowY = 'hidden';
-    })
-    .on('leave', function () {
-      document.body.style.overflowX = 'hidden';
-      document.body.style.overflowY = 'scroll';
-    })
-    .addTo(controller);*/
-});
