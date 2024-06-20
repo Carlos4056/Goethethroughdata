@@ -24,39 +24,38 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   // Animación para los elementos <mark>
-  const subrayados = document.querySelectorAll('mark');
+  const subrayados = document.querySelectorAll('.mark');
   subrayados.forEach((subrayado) => {
     new ScrollMagic.Scene({
       triggerElement: subrayado,
       triggerHook: 0.7,
       reverse: true
-    
     })
       .setClassToggle(subrayado, 'active')
       .addTo(controller);
   });
-  // Animación para los elementos <mark amarillos>
-  const subrayadosamarillo = document.querySelectorAll('amarillo');
+
+  // Animación para los elementos con clase amarillo
+  const subrayadosamarillo = document.querySelectorAll('.amarillo');
   subrayadosamarillo.forEach((subrayadoamarillo) => {
     new ScrollMagic.Scene({
       triggerElement: subrayadoamarillo,
       triggerHook: 0.7,
       reverse: true
-    
     })
       .setClassToggle(subrayadoamarillo, 'active')
       .addTo(controller);
   });
-  // Animación para los elementos <mark amarillos>
-  const subrayadoslilas = document.querySelectorAll('lila');
+
+  // Animación para los elementos con clase lila
+  const subrayadoslilas = document.querySelectorAll('.lila');
   subrayadoslilas.forEach((subrayadolila) => {
     new ScrollMagic.Scene({
       triggerElement: subrayadolila,
       triggerHook: 0.7,
       reverse: true
-    
     })
-      .setClassToggle(subrayadoamarillo, 'active')
+      .setClassToggle(subrayadolila, 'active')
       .addTo(controller);
   });
-});
+}); 
