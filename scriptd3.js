@@ -50,7 +50,7 @@ d3.csv("frecuencias_palabras.csv").then(function(data) {
     // Crear un gradiente radial
     var gradient = content.append("defs")
       .append("radialGradient")
-      .attr("id", "bubble-gradient");
+      .attr("id", "bubble-gradienta");
   
     gradient.append("stop")
       .attr("offset", "0%")
@@ -125,7 +125,7 @@ d3.csv("frecuencias_palabras.csv").then(function(data) {
     .attr("r", function(d) {
       return size(+d["frecuencia.Freq"]);
     })
-    .attr("fill", "url(#bubble-gradient)");
+    .attr("fill", "url(#bubble-gradienta)");
   
     // Agregar etiquetas de texto a las burbujas
     bubbles.append("text")
@@ -266,7 +266,7 @@ d3.csv("frecuencias_palabras.csv").then(function(data) {
     // Crear un gradiente radial
     var gradient = content.append("defs")
     .append("radialGradient")
-    .attr("id", "bubble-gradient");
+    .attr("id", "bubble-gradientb");
 
     gradient.append("stop")
     .attr("offset", "0%")
@@ -341,7 +341,7 @@ d3.csv("frecuencias_palabras.csv").then(function(data) {
       .attr("r", function(d) {
         return size(+d["frecuencia.Freq"]);
       })
-      .attr("fill", "url(#bubble-gradient)");
+      .attr("fill", "url(#bubble-gradientb)");
   
     // Agregar etiquetas de texto a las burbujas
     bubbles.append("text")
@@ -478,7 +478,7 @@ d3.csv("frecuencias_palabras.csv").then(function(data) {
     // Crear un gradiente radial
     var gradient = content.append("defs")
     .append("radialGradient")
-    .attr("id", "bubble-gradient");
+    .attr("id", "bubble-gradientc");
 
     gradient.append("stop")
     .attr("offset", "0%")
@@ -553,7 +553,7 @@ d3.csv("frecuencias_palabras.csv").then(function(data) {
       .attr("r", function(d) {
         return size(+d["frecuencia.Freq"]);
       })
-      .attr("fill", "url(#bubble-gradient)");
+      .attr("fill", "url(#bubble-gradientc)");
   
     // Agregar etiquetas de texto a las burbujas
     bubbles.append("text")
