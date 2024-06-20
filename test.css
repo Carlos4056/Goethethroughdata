@@ -267,7 +267,6 @@ body {
     svg {
       min-height: 700px;
       max-width: none;
-      overflow-x: auto;
     }
   
     svg#calendar {
@@ -277,6 +276,7 @@ body {
     .calendar {
       min-height: 300px;
       text-align: center;
+      overflow-x: auto;
     }
   }
   .pie_grafico {
