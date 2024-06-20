@@ -6,7 +6,7 @@
 //6. Agregar interactividad: Podemos agregar interactividad a las burbujas, como mostrar información adicional al pasar el mouse sobre ellas o al hacer clic.
 //7. Ajustar la estética: Finalmente, ajustaremos la estética general de la visualización, como agregar un título, leyendas o cualquier otro elemento visual que mejore la presentación.
 
-d3.csv("data/frecuencias_palabras.csv").then(function(data) {
+d3.csv("frecuencias_palabras.csv").then(function(data) {
     // Filtrar los datos para obtener palabras con frecuencia superior a 50
     var filteredData = data.filter(function(d) {
       return +d["frecuencia.Freq"] > 50 && d.documento === "trad_gonzalez_garcia.pdf";
@@ -212,7 +212,7 @@ d3.csv("data/frecuencias_palabras.csv").then(function(data) {
 
 ////////Gráfico ISABEL HERNANDEZ///////////////////
 
-d3.csv("data/frecuencias_palabras.csv").then(function(data) {
+d3.csv("frecuencias_palabras.csv").then(function(data) {
     // Filtrar los datos para obtener palabras con frecuencia superior a 50
     var filteredData = data.filter(function(d) {
       return +d["frecuencia.Freq"] > 50 && d.documento === "trad_isabel_hernandez.pdf";
@@ -423,7 +423,7 @@ d3.csv("data/frecuencias_palabras.csv").then(function(data) {
 
 ////////////////////Gráfico Valverde///////////////////////////
 
-d3.csv("data/frecuencias_palabras.csv").then(function(data) {
+d3.csv("frecuencias_palabras.csv").then(function(data) {
     // Filtrar los datos para obtener palabras con frecuencia superior a 50
     var filteredData = data.filter(function(d) {
       return +d["frecuencia.Freq"] > 50 && d.documento === "trad_valverde.pdf";
@@ -689,7 +689,7 @@ const timeWeek = d3.timeMonday;
 const countDay = i => (i + 6) % 7;
 
 // Cargar los datos
-d3.csv("/data/calendario.csv").then(data => {
+d3.csv("calendario.csv").then(data => {
   // Parsear las fechas y los valores
   data.forEach(d => {
     d.Fecha_Formateada = d3.timeParse("%Y-%m-%d")(d.Fecha_Formateada);
